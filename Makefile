@@ -3,24 +3,24 @@ BRANCH := $(shell git -C .. rev-parse --abbrev-ref HEAD)
 
 ifeq ($(findstring 10,$(BRANCH)),10)
     ifeq ($(findstring ginkgo,$(DEVICE)),ginkgo)
-        NAME := RyzenKernel-Ginkgo-10
+        NAME := Predator-Kernel-ginkgo-Q
     else
-        NAME := RyzenKernel-Ginkgo-10
+        NAME := Predator-Kernel-ginkgo-Q
     endif
     DATE := $(shell date "+%Y%m%d")
-    ZIP := $(NAME)-$(DATE).zip
+    ZIP := $(NAME)-$(DATE)-$(+%Y%m%d-%H%M).zip
 else
     ifeq ($(findstring whyred,$(DEVICE)),whyred)
-        NAME := RyzenKernel-Ginkgo-10
+        NAME := Predator-Kernel-ginkgo-Q
     else
     ifeq ($(findstring ginkgo,$(DEVICE)),ginkgo)
-        NAME := RyzenKernel-Ginkgo-10
+        NAME := Predator-Kernel-ginkgo-Q
     else
-        NAME := RyzenKernel-Ginkgo-10
+        NAME := Predator-Kernel-ginkgo-Q
     endif
     endif
     DATE := $(shell date "+%Y%m%d")
-    ZIP := $(NAME)-$(DATE).zip
+    ZIP := $(NAME)-$(DATE)-$(+%Y%m%d-%H%M).zip
 endif
 
 EXCLUDE := Makefile *.git* *.jar* *placeholder* *.md*
